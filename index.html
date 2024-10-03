@@ -48,15 +48,24 @@
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            font-size: 16px;
         }
         .download-button:hover {
             background-color: #a33d4a;
         }
-        .pdf-embed {
+        .pdf-container {
+            position: relative;
             width: 100%;
-            height: 600px;
-            border: none;
+            padding-top: 75%; /* 4:3 Aspect Ratio */
             margin-bottom: 20px;
+        }
+        .pdf-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
         table {
             width: 100%;
@@ -103,68 +112,43 @@
             h2 {
                 font-size: 18px;
             }
-            p, th, td, .references, .reference-item, footer {
+            p, th, td, .download-button, footer {
                 font-size: 12px;
             }
-            .pdf-embed {
-                height: 400px;
+            .pdf-container {
+                padding-top: 56.25%; /* 16:9 Aspect Ratio */
             }
             .download-button {
                 padding: 8px 16px;
                 font-size: 14px;
             }
-            table, thead, tbody, th, td, tr {
+            .pdf-container iframe {
+                height: 100%;
+            }
+            table {
                 display: block;
-            }
-            thead tr {
-                display: none;
-            }
-            tr {
-                margin-bottom: 10px;
-            }
-            td {
-                border: none;
-                position: relative;
-                padding-left: 50%;
-                text-align: right;
-            }
-            td::before {
-                position: absolute;
-                top: 8px;
-                left: 12px;
-                width: 45%;
-                padding-right: 10px;
+                overflow-x: auto;
                 white-space: nowrap;
-                font-weight: bold;
-                text-align: left;
             }
-            /* Add labels to table cells */
-            td:nth-of-type(1)::before { content: "Variable"; }
-            td:nth-of-type(2)::before { content: "1"; }
-            td:nth-of-type(3)::before { content: "2"; }
-            td:nth-of-type(4)::before { content: "3"; }
-            td:nth-of-type(5)::before { content: "4"; }
-            td:nth-of-type(6)::before { content: "5"; }
-            td:nth-of-type(7)::before { content: "6"; }
-            td:nth-of-type(8)::before { content: "7"; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Supplement to Sex-Based Disparities in Cost-Related Medication Nonadherence in Older Adult Patients with Type 2 Diabetes from the All of Us Database</h1>
+        <h1>Supplementary Materials</h1>
     </header>
 
     <div class="container">
         <!-- Embed PDF Section -->
         <div class="pdf-section">
-            <a href="diabetes_CRMA_poster.pdf" download class="download-button">Download PDF</a>
-            <iframe src="diabetes_CRMA_poster.pdf" class="pdf-embed">
-                This browser does not support PDFs. Please download the PDF to view it: <a href="Poster PDF.pdf">Download PDF</a>.
-            </iframe>
+            <a href="diabetes_CRMA_poster.pdf" class="download-button" download>Download PDF</a>
+            <div class="pdf-container">
+                <iframe src="diabetes_CRMA_poster.pdf" title="Supplemental Poster PDF">
+                    This browser does not support PDFs. Please download the PDF to view it: <a href="Poster PDF.pdf">Download PDF</a>.
+                </iframe>
+            </div>
         </div>
-
         <!-- Supplemental Tables -->
         
         <!-- Supplemental Table 1 -->
